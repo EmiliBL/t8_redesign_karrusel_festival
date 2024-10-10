@@ -1,0 +1,31 @@
+<h3>SEE YOU IN</h3>
+<h1 id="countdown">Countdown</h1>
+<script>
+  // Sæt den dato, du tæller ned til
+  var countDownDate = new Date("Aug 24, 2025 23:59:59").getTime();
+
+  // Opdater nedtællingen hvert sekund
+  var x = setInterval(function () {
+    // Find den nuværende tid
+    var now = new Date().getTime();
+
+    // Beregn afstanden mellem nu og nedtællingsdatoen
+    var distance = countDownDate - now;
+
+    // Beregn tid til dage, timer, minutter og sekunder
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Vis resultatet i elementet med id="countdown"
+    document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    // Vi kan fjerne minutes og sekunder hvis det fylder for meget
+
+    // Hvis nedtællingen er slut, skriv noget tekst
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("countdown").innerHTML = "EXPIRED";
+    }
+  }, 1000);
+</script>
