@@ -173,10 +173,7 @@ img {
 
 /******************** Typografi ********************/
 /******************** Går ind og forstyrre h1 i mobil ********************/
-/* h1 {
-    font-family: "glodok", sans-serif;
-    font-size: 70px;
-  } */
+
 /******************** Går ind og forstyrre h1 i mobil ********************/
 
 h2 {
@@ -383,4 +380,11 @@ body {
     display: flex;
     flex-direction: column;
   }
+
+    h1 {
+      font-family: "glodok", sans-serif;
+      font-size: 70px;
+    }
 }
+
+
