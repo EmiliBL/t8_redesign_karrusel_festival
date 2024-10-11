@@ -1,11 +1,42 @@
+  
+  <article class="glas_boks">
   <form action="/action_page.php">
 
             <div class="container">
                 <h3>Subscribe to our Newsletter</h3>
-                <input type="text" placeholder="Name" name="name" required>
+                <br>
+                <p class="p_default">Your Name</p>
+                <input type="text" placeholder="Write your name" name="name" required>
+                <p class="p_default">Your E-mail</p>
+                
                 <input type="text" placeholder="Email address" name="mail" required>
-                <label>
-                </label>
-                <input type="submit" value="Subscribe">
+                
+                <br>
+                <input type="submit" value="Apply">
             </div>
         </form>
+</article>
+
+<style>
+    .glas_boks {
+width: 370px;
+height: 340px;
+padding: 15px;
+border-radius: 35px;
+background: rgba(255, 255, 255, 0.19);
+backdrop-filter: blur(7.5px);
+text-align: left;
+}
+section {
+margin-left: 142px;
+margin-right: 142px;
+}
+.container{
+    padding: 20px;
+}
+input{
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+}
+</style>
