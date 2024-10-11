@@ -3,5 +3,95 @@ import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout>
-  <h1>Test</h1>
+  <h1>Artists</h1>
+  <section class="grid-container">
+      <article class="glas_boks">
+          <a href="singe_view.astro">
+              <img src="website_fotos/the_kid.webp" alt="the_kid"></a>
+          <h3>The Kid Laroi</h3>
+          <p class="p_big"> The Kid Laroi Lorem Ipsum More music than ever producing stuff and more stuff</p>
+      </article>
+
+      <article class="glas_boks">
+          <a href="singe_view.astro">
+              <img src="website_fotos/JB.webp" alt="Justin Bieber"></a>
+          <h3>Justin Bieber</h3>
+          <p class="p_big"> Justin Bieber Lorem Ipsum More music than ever producing stuff and more stuff</p>
+      </article>
+
+      <article class="glas_boks">
+          <a href="singe_view">
+              <img src="website_fotos/dick_diddy.webp" alt="P-diddy"></a>
+          <h3>Dick - Diddy</h3>
+          <p class="p_big"> Dick-diddy Lorem Ipsum More music than ever producing stuff and more stuff</p>
+      </article>
+  </section>
 </MainLayout>
+
+<style>
+ .grid-container {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+padding: 20px;
+}
+
+.glas_boks {
+width: 370px;
+height: 459px;
+padding: 15px;
+border-radius: 35px;
+background: rgba(255, 255, 255, 0.19);
+backdrop-filter: blur(7.5px);
+text-align: left;
+}
+
+img {
+width: 100%;
+height: auto;
+border-radius: 35px;
+}
+
+/* Stil for teksten */
+.p_big {
+font-size: 1.2rem;
+line-height: 1.5;
+}
+
+h1 {
+font-family: "glodok", sans-serif;
+font-size: 70px;
+}
+
+section {
+margin-left: 142px;
+margin-right: 142px;
+}
+
+/* ************MOBIL */
+@media (max-width: 768px) {
+.grid-container {
+  grid-template-columns: 1fr;
+  margin: 16px;
+}
+
+.img_section {
+  margin-bottom: 8px;
+  width: 100%;
+  height: auto;
+}
+
+img {
+  width: 100%;
+}
+
+h3 {
+  font-size: 23px;
+}
+
+h1 {
+  font-size: 43px;
+}
+}
+</style>
+

@@ -2,6 +2,118 @@
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<MainLayout>
-  <h1>Test</h1>
+<MainLayout> 
+  <a href="listview.html">
+      <h1 class="h1_tilbage">Artists</h1>
+  </a>
+  <h1 class="h1_current"> - Artist</h1>
+
+  <article class="single_view_glas_boks">
+      <section class="img_section">
+          <img src="website_fotos/the_kid.webp" alt="the_kid">
+      </section>
+      <section class="text_section">
+          <h2>The Kid Laroi</h2>
+          <p>Rock DJ POP</p>
+          <p class="p_default"> Charlton Kenneth Jeffrey Howard (born 17 August 2003), known professionally as the Kid
+              Laroi (stylised as the Kid LAROI), is an Australian rapper, singer, and songwriter. </p>
+      </section>
+  </article>
 </MainLayout>
+
+<style>
+  .single_view_glas_boks {
+display: flex;
+gap: 20px;
+padding: 20px;
+background: rgba(255, 255, 255, 0.19);
+backdrop-filter: blur(7.5px);
+border-radius: 35px;
+width: 100%;
+max-width: 1202px;
+height: auto;
+margin-left: auto;
+margin-right: auto;
+}
+
+.img_section {
+flex: 1;
+text-align: center;
+}
+
+.text_section {
+flex: 1;
+display: flex;
+flex-direction: column;
+justify-content: start;
+margin-top: 19px;
+}
+
+img {
+width: 100%;
+height: auto;
+border-radius: 20px;
+}
+
+.p_default {
+margin-top: 16px;
+font-size: 1.1rem;
+line-height: 1.5;
+}
+
+h1 {
+font-family: "glodok", sans-serif;
+font-size: 70px;
+margin-bottom: 24px;
+}
+
+.h1_tilbage {
+color: #f9f9f9;
+opacity: 50%;
+}
+
+h2 {
+font-size: 43px;
+}
+
+.h1_tilbage,
+.h1_current {
+display: inline;
+}
+
+a {
+text-decoration: none;
+}
+
+/* ************MOBIL */
+@media (max-width: 480px) {
+.single_view_glas_boks {
+  flex-direction: column;
+  width: 90%;
+  height: auto;
+  margin-left: 16px;
+  margin-right: 16px;
+  gap: 0%;
+  margin-top: 10%;
+}
+
+.img_section {
+  margin-bottom: 8px;
+  width: 100%;
+  height: auto;
+}
+
+img {
+  width: 100%;
+}
+
+h3 {
+  font-size: 23px;
+}
+
+h1 {
+  font-size: 43px;
+}
+}
+
+</style>
