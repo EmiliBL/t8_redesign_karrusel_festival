@@ -30,7 +30,7 @@ img {
   }
 
   /******************** margin ********************/
-  main {
+  .main {
     margin-left: 16px;
     margin-right: 16px;
   }
@@ -165,7 +165,7 @@ img {
     grid-row: 1;
     border-radius: 20px;
     width: 300px;
-    height: 300px;
+    height: 280px;
   }
 }
 /******************** GALLERY MEN IPAD-VERSION IKKE NOGET VI BEHØVER AT HAVE MED ********************/
@@ -193,63 +193,59 @@ img {
     text-align: center;
   }
 
-<<<<<<< HEAD
   .galh1 {
     padding-bottom: 24px;
     padding-top: 30px;
     font-family: "glodok", sans-serif;
     font-size: 43px;
   }
-=======
- .desktop_footer {
-   display: none;
- }
 
- .mobil_footer {
-   background-image: url(website_fotos/Mobil.svg);
-   background-size: cover;
-   padding-top: 140px;
- }
+  .desktop_footer {
+    display: none;
+  }
 
- footer img {
-   width: 130px;
-   /*KAN ÆNDRES SYNES STØRRELSE VAR GOD*/
- }
+  .mobil_footer {
+    background-image: url(website_fotos/Mobil.svg);
+    background-size: cover;
+    padding-top: 140px;
+  }
 
- .spondiv {
-   display: flex;
-   justify-content: space-between;
-   padding-left: 15px;
-   padding-right: 15px;
- }
+  footer img {
+    width: 130px;
+    /*KAN ÆNDRES SYNES STØRRELSE VAR GOD*/
+  }
 
- .p_footer {
-   font-family: "Prompt", sans-serif;
-   font-size: 10px;
-   color: var(--secondary-color);
- }
+  .spondiv {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 
- .buttfot {
-   display: flex;
-   justify-content: space-between;
-   padding-top: 20px;
-   padding-left: 15px;
-   padding-right: 15px;
- }
+  .p_footer {
+    font-family: "Prompt", sans-serif;
+    font-size: 10px;
+    color: var(--secondary-color);
+  }
 
- .social {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   padding-right: 28px;
- }
+  .buttfot {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 
- .social svg {
-   margin-bottom: 10px;
- }
+  .social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 28px;
+  }
 
->>>>>>> a20e57bea4a80ba11fa8d07de63d7e79bb622efb
-
+  .social svg {
+    margin-bottom: 10px;
+  }
   .card-gallery img {
     grid-column: 1;
     grid-row: 1;
@@ -318,7 +314,7 @@ p {
 
 /******************** margin ********************/
 
-main {
+.main {
   margin-left: 24px;
   margin-right: 24px;
 }
@@ -499,13 +495,14 @@ body {
     display: flex;
     position: relative;
     transform: translate3d(var(--move-initial), 0, 0);
-    animation: artistLoop 5s linear infinite;
+    animation: artistLoop 9s linear infinite;
   }
 
   .artistLoop span {
     white-space: nowrap;
     font-size: 9.9vw;
     padding: 0 2vw;
+    font-size: 50px;
   }
 
   @keyframes artistLoop {

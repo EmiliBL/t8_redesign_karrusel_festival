@@ -1,18 +1,22 @@
 ---
 import BurgerMenu from "../components/BurgerMenu.astro";
+import BuyTickets from "../components/BuyTickets.astro";
 ---
 
 <nav>
   <a href="index.astro" aria-label="Home">
     <img src="../public/website_fotos/logowhite.png" alt="Logo" />
   </a>
-  <div class="burger-container">
-    <BurgerMenu />
-    <div class="dropdown-menu" id="dropdownMenu">
-      <a class="aref" href="../artists">Artists</a>
-      <a class="aref" href="../information">Information</a>
-      <a class="aref" href="../volunteer">Volunteer</a>
-      <a class="aref" href="../gallery">Gallery</a>
+  <div class="lefti">
+    <BuyTickets />
+    <div class="burger-container">
+      <BurgerMenu />
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a class="aref" href="../artists">Artists</a>
+        <a class="aref" href="../information">Information</a>
+        <a class="aref" href="../volunteer">Volunteer</a>
+        <a class="aref" href="../gallery">Gallery</a>
+      </div>
     </div>
   </div>
 </nav>
@@ -26,10 +30,11 @@ import BurgerMenu from "../components/BurgerMenu.astro";
   }
   img {
     width: 74px;
-    height: 50px;
+    height: auto;
   }
   .burger-container {
     position: relative;
+    padding-left: 50px;
   }
   .dropdown-menu {
     display: none;
@@ -60,6 +65,20 @@ import BurgerMenu from "../components/BurgerMenu.astro";
     font-size: 40px;
     color: var(--primary-color);
     line-height: 200%;
+  }
+  .lefti {
+    display: flex;
+  }
+  @media (max-width: 400px) {
+    img {
+      width: 48px;
+      height: auto;
+      margin-left: 40px;
+    }
+    .burger-container {
+      position: relative;
+      padding-left: 25px;
+    }
   }
 </style>
 
