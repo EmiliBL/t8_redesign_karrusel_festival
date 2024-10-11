@@ -188,6 +188,8 @@ background: linear-gradient(to right, #CF6AFF 0%, #FF007A 100%);
       align-content: center;
       margin: 10px;
     }
+
+    /*******  Desktop ******/
     @media (min-width: 768px) {
     .grid {
       grid-template-columns: repeat(3, 1fr);
@@ -222,4 +224,51 @@ background: linear-gradient(to right, #CF6AFF 0%, #FF007A 100%);
     }
     
   }
+
+  
+ /*******  Mobil ******/
+@media (max-width: 768px){
+  .hero {
+    flex-direction: column; /* Stack content vertically */
+    height: auto;
+    padding: 20px;
+  }
+
+  .heroImage {
+    max-width: 150px; /* Adjust image size for smaller screens */
+    margin-bottom: 20px;
+  }
+
+  .heroText {
+    font-size: 30px; /* Smaller text size for mobile */
+    top: 40%; /* Adjust positioning */
+    transform: translate(-50%, -40%);
+  }
+
+  .heroBtn {
+    bottom: 10px; /* Adjust button position */
+    font-size: 1rem; /* Smaller font for mobile */
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-rows: auto;
+    gap: 10px;
+  }
+
+  .item-0, .item-1, .item-2, .item-3 {
+    text-align: center;
+    margin: 10px auto; /* Center items */
+  }
+
+  .TakForIAar h2 {
+    font-size: 40px; /* Smaller font for mobile */
+  }
+
+  .artistLoop, .loopNavne {
+    font-size: 1.2rem; /* Adjust font size for mobile readability */
+  }
+
+}
+
   </style>
