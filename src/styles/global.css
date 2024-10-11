@@ -165,7 +165,8 @@ img {
     grid-row: 1;
     border-radius: 20px;
     width: 300px;
-    height: 300px;
+    height: 280px;
+    
   }
 }
 /******************** GALLERY MEN IPAD-VERSION IKKE NOGET VI BEHØVER AT HAVE MED ********************/
@@ -193,14 +194,14 @@ img {
     text-align: center;
   }
 
-<<<<<<< HEAD
+
   .galh1 {
     padding-bottom: 24px;
     padding-top: 30px;
     font-family: "glodok", sans-serif;
     font-size: 43px;
   }
-=======
+
  .desktop_footer {
    display: none;
  }
@@ -247,9 +248,6 @@ img {
  .social svg {
    margin-bottom: 10px;
  }
-
->>>>>>> a20e57bea4a80ba11fa8d07de63d7e79bb622efb
-
   .card-gallery img {
     grid-column: 1;
     grid-row: 1;
