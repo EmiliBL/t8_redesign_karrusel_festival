@@ -173,7 +173,10 @@ img {
 
 /******************** Typografi ********************/
 /******************** Går ind og forstyrre h1 i mobil ********************/
-
+h1 {
+  font-family: "glodok", sans-serif;
+  font-size: 70px;
+}
 /******************** Går ind og forstyrre h1 i mobil ********************/
 
 h2 {
@@ -212,6 +215,11 @@ p {
   color: var(--secondary-color);
 }
 
+.p_big {
+  font-family: "Prompt", sans-serif;
+  font-size: 24px;
+  color: var(--secondary-color);
+}
 /******************** Colors ********************/
 
 :root {
@@ -381,10 +389,8 @@ body {
     flex-direction: column;
   }
 
-    h1 {
-      font-family: "glodok", sans-serif;
-      font-size: 70px;
-    }
+  h1 {
+    font-family: "glodok", sans-serif;
+    font-size: 70px;
+  }
 }
-
-
