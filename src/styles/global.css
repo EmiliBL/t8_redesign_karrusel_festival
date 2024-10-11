@@ -30,7 +30,7 @@ img {
   }
 
   /******************** margin ********************/
-  main {
+  .main {
     margin-left: 16px;
     margin-right: 16px;
   }
@@ -316,7 +316,7 @@ p {
 
 /******************** margin ********************/
 
-main {
+.main {
   margin-left: 24px;
   margin-right: 24px;
 }
