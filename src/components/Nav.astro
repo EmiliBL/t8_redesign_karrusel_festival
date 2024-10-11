@@ -30,7 +30,7 @@ import BuyTickets from "../components/BuyTickets.astro";
   }
   img {
     width: 74px;
-    height: 50px;
+    height: auto;
   }
   .burger-container {
     position: relative;
@@ -66,10 +66,19 @@ import BuyTickets from "../components/BuyTickets.astro";
     color: var(--primary-color);
     line-height: 200%;
   }
-  @media (max-width: 400px) {
-  }
   .lefti {
     display: flex;
+  }
+  @media (max-width: 400px) {
+    img {
+      width: 48px;
+      height: auto;
+      margin-left: 40px;
+    }
+    .burger-container {
+      position: relative;
+      padding-left: 25px;
+    }
   }
 </style>
 
