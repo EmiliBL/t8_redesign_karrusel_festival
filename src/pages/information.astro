@@ -1,11 +1,14 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro"
+import Newsletter from "../components/Newsletter.astro"
 
 
 ---
 <MainLayout>
     <img src="website_fotos/nattelys.webp" alt="nattelys">
-    <h1>SEE YOU IN 306 DAYS</h1>
+    <h2>
+        SEE YOU IN 306 DAYS
+    </h2>
     <br>
     <hr>
     <br>
@@ -16,22 +19,63 @@ import MainLayout from "../layouts/MainLayout.astro"
         <p class="p_default">800 DKK</p>
         <p class="p_default">Ticket fee: 30 DKK. Age limit +18</p>
 
-
+       
+ 
+      <article class="glas_boks">
 <h3>Where are we</h3>
 <p class="p_default">Copenhagen, Refshaleøen</p>
 <br>
 <p class="p_default">Address</p>
 <p class="p_default">Refshalevej 193, 1432 Copenhagen</p>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4199.193901281232!2d12.6147980969258!3d55.6917210067423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465252d50061fcd7%3A0x1e396bc2dce47e59!2sRefshalevej%20193%2C%201432%20K%C3%B8benhavn!5e0!3m2!1sda!2sdk!4v1728633046231!5m2!1sda!2sdk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<iframe src ="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4199.193901281232!2d12.6147980969258!3d55.6917210067423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465252d50061fcd7%3A0x1e396bc2dce47e59!2sRefshalevej%20193%2C%201432%20K%C3%B8benhavn!5e0!3m2!1sda!2sdk!4v1728633046231!5m2!1sda!2sdk"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</article>
+
+
 
 <h3>Pratical Information</h3>
 <ul class="ul_default">
     <li>You can not bring food</li>
     <li>You can not bring drinks</li>
 </ul>
+
 <h3>Neighbour's Information</h3>
 <p class="p_default">As our neighbour you can find more information the closer we are getting to the start date.</p>
 <br>
 <hr>
 <br>
+</section>
+<Newsletter />
 </MainLayout>
+
+<style>
+
+
+.glas_boks {
+width: 370px;
+height: 459px;
+padding: 15px;
+border-radius: 35px;
+background: rgba(255, 255, 255, 0.19);
+backdrop-filter: blur(7.5px);
+text-align: left;
+}
+section {
+margin-left: 142px;
+margin-right: 142px;
+}
+
+iframe{
+  width: 340px;
+  height: 200px;
+  border: 0;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+.p_default, h2, h3, li{
+  padding: 8px;
+  padding-left: 20px;
+}
+
+</style>
