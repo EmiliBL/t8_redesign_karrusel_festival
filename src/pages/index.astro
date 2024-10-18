@@ -21,10 +21,10 @@ import Newsletter from "../components/Newsletter.astro";
 <main>
         <!-- Kategorier -->
  <div class="grid">
-  <h3 class="glas_boks item-0">ARTISTS</h3>
-  <h3 class="glas_boks item-1">INFORMATION</h3>
-  <h3 class="glas_boks item-2">VOLUNTEER</h3>
-  <h3 class="glas_boks item-3">GALLERY</h3>
+  <a href="../singleview" class="glas_boks item-0"><h3>ARTISTS</h3></a>
+<a href="../information" class="glas_boks item-1"><h3>INFORMATION</h3></a>
+  <a href="../volunteer" class="glas_boks item-2"><h3>VOLUNTEER</h3></a>
+  <a href="../gallery" class="glas_boks item-3"><h3>GALLERY</h3></a>
 </div>
 
         <hr>
@@ -68,6 +68,11 @@ import Newsletter from "../components/Newsletter.astro";
   background-color: white; /* Skift farve, hvis ønsket */
   border: none; /* Fjern standardborden */
 }
+
+.grid a {
+  text-decoration: none; /* Fjerner understregningen af linket */
+}
+
 
    /*******  Mobil ******/
 @media (max-width: 768px){
