@@ -1,0 +1,36 @@
+---
+import Card from "../../components/Card.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+const artists = await fetch("https://fqqsspkfhiflxjtsrgww.supabase.co/rest/v1/artists", {
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZxcXNzcGtmaGlmbHhqdHNyZ3d3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg1NjAzNjcsImV4cCI6MjA0NDEzNjM2N30.lGEaWT1iF4phieeYwFT6JqOFktNkEMe7c-D8cT2nOCg",
+  },
+}).then((res) => res.json());
+---
+
+<MainLayout>
+  <div class="margin">
+    <h1>Artists</h1>
+    <ul class="grid-container">
+      {artists.map((artist) => <Card data={artist} />)}
+    </ul>
+  </div>
+</MainLayout>
+
+<style>
+  h1 {
+    padding-bottom: 50px;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    list-style: none;
+  }
+  .margin {
+    margin-left: 142px;
+    margin-right: 142px;
+  }
+</style>
