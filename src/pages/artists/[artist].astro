@@ -1,4 +1,6 @@
 ---
+import MainLayout from "../../layouts/MainLayout.astro";
+
 //@ts-nocheck
 export async function getStaticPaths() {
   const artists = await fetch("https://fqqsspkfhiflxjtsrgww.supabase.co/rest/v1/artists", {
@@ -16,4 +18,6 @@ const { artist } = Astro.props;
 console.log(artist); // artist.name, artist.image osv.
 ---
 
-<h1>{artist.artist}</h1>
+<MainLayout>
+  <h1>{artist.artist}</h1>
+</MainLayout>
