@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import BuyTickets from "../components/BuyTickets.astro";
+import Newsletter from "../components/Newsletter.astro";
 ---
 
 <MainLayout>
@@ -12,16 +13,18 @@ import BuyTickets from "../components/BuyTickets.astro";
     <video autoplay muted loop class="heroVideo">
         <source src="https://anarikkelarsen.dk/kea/08_ux_ui_II/karrusel_video.mp4" type="video/mp4">
     </video>
-    <button class="heroBtn">Buy Ticket</button>
+    <div class="heroBtn">
+    <BuyTickets>
+      </div>
 </section>
 
 <main>
         <!-- Kategorier -->
  <div class="grid">
-  <h3 class="glas_boks item-0">ARTISTS</h3>
-  <h3 class="glas_boks item-1">INFORMATION</h3>
-  <h3 class="glas_boks item-2">VOLUNTEER</h3>
-  <h3 class="glas_boks item-3">GALLERY</h3>
+  <a href="../singleview" class="glas_boks item-0"><h3>ARTISTS</h3></a>
+<a href="../information" class="glas_boks item-1"><h3>INFORMATION</h3></a>
+  <a href="../volunteer" class="glas_boks item-2"><h3>VOLUNTEER</h3></a>
+  <a href="../gallery" class="glas_boks item-3"><h3>GALLERY</h3></a>
 </div>
 
         <hr>
@@ -51,175 +54,394 @@ import BuyTickets from "../components/BuyTickets.astro";
 
         <hr>
         <!-- Nyhedsbrev -->
-        <form action="/action_page.php">
-
-            <div class="container">
-                <h3>Subscribe to our Newsletter</h3>
-                <input type="text" placeholder="Name" name="name" required>
-                <input type="text" placeholder="Email address" name="mail" required>
-                <label>
-                </label>
-                <input type="submit" value="Subscribe">
-            </div>
-        </form>
-        </main>
+         <div class="nyhedsbrev">
+       <Newsletter/>
+      </div>  
+      </main>
 </MainLayout>
 
 
-
-
 <style>
+  /* HR (break lines */
+  hr {
+  height: 3px; /* Angiv tykkelsen på linjen */
+  background-color: white; /* Skift farve, hvis ønsket */
+  border: none; /* Fjern standardborden */
+}
+
+.grid a {
+  text-decoration: none; /* Fjerner understregningen af linket */
+}
+
+
+   /*******  Mobil ******/
+@media (max-width: 768px){
 .hero {
-  position: relative;
-  display: flex; /* Enable flexbox */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  margin-bottom: 120px;
+  position: relative; /* Sørg for, at alle absolutte elementer placeres i forhold til hero-sektionen */
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
 }
 
 .heroVideo {
   position: absolute;
-  top: 50%;
+  top: 23%;
   left: 50%;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: auto;
+  background-color: black;
   object-fit: cover;
   transform: translate(-50%, -50%);
   z-index: 1; /* Sørger for, at videoen forbliver i baggrunden */
 }
 
+/* Hero Image */
 .heroImage {
-  max-width: 300px;
-  z-index: 2; /* Keeps the image above the video */
+  position: absolute;
+  top: 15%; /* Centrerer lodret */
+  left: 50%; /* Centrerer horisontalt */
+  transform: translate(-50%, -50%); /* Flytter elementet til midten */
+  max-width: 120px;
+  z-index: 2; /* Sørger for, at billedet er oven på videoen */
 }
+
+/* Hero Text */
 .heroText {
   position: absolute;
-  top: calc(50% + 150px); /* Flytter teksten 30px længere ned */
+  top: 80%; /* Centrerer lodret */
+  left: 50%; /* Centrerer horisontalt */
+  transform: translate(-50%, -50%); /* Flytter elementet til midten */
+  font-size: 15px;
+  text-wrap: nowrap;
+  color: white;
+  z-index: 2; /* Sørger for, at teksten er oven på videoen */
+  text-align: center;
+}
+
+.heroBtn{
+  position: absolute;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #fff;
-  z-index: 2;
+    z-index: 2; /* Sørger for, at teksten er oven på videoen */
+}
+   
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    
+  }
+
+    .item-0, .item-1, .item-2, .item-3 {
+    margin: 0; /* Fjern margin for bedre placering */
+    height: 100px; /* Lad højden være fleksibel */
+    font-size: 17px; 
+    text-align: center;
+    align-content: center;
+    margin: 10px;
+  }
+
+      .item-0 {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    
+    .item-1 {
+      grid-column: 2 / span 2;
+      grid-row: 1;
+    }
+    
+    .item-2 {
+      grid-column: 1 / span 2;
+      grid-row: 2;
+    }
+    
+    .item-3 {
+      grid-column: 3;
+      grid-row: 2;
+    }
+  .glas_boks {
+  padding: 15px; /* Øger padding for mere plads omkring teksten */
   text-align: center;
-  font-size: 50px;
-   white-space: nowrap; /* Forhindrer linjeskift */
-  overflow: hidden; /* Sikrer at indhold der ikke kan være på linjen bliver skjult */
-  text-overflow: ellipsis; /* Tilføjer '...' hvis teksten er for lang */
+}
+      .TakForIAar, .TakForIAar h2 {
+        font-size: 30px; /* Mindre skriftstørrelse til mobil */
+        margin-top: 30px; /* Juster margin for mobil */
+        text-align: center;
+    }
+
+    /* Scrolling text styles */
+.artistLoop {
+  overflow: hidden; /* Skjul tekst, der er uden for containeren */
+  white-space: nowrap;
+  position: relative;
+  margin: 30px;
+    font-family: "glodok", sans-serif;
+  font-size: 20px;
 }
 
-
-.heroBtn {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 10px 20px;
-  font-size: 1.2rem;
-  background-color: #ff5a5f;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  z-index: 2; /* Sørger for, at knappen er foran videoen */
-}
-
-.TakForIAar, .TakForIAar h2 {
-text-align: center;
-margin-top: 50px;
-font-size: 60px;
-}
-
-
-.artistLoop, .loopNavne {
-font-family: "glodok", sans-serif;
-margin: 40px;
-background: #CF6AFF;
+.loopNavne {
+  display: inline-block;
+  animation: scrolling 20s linear infinite; /* Animation, der ruller teksten */
 background: linear-gradient(to right, #CF6AFF 0%, #FF007A 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  -webkit-background-clip: text; /* Anvend gradienten på teksten */
+  -webkit-text-fill-color: transparent; /* Gør tekstfarven gennemsigtig, så gradienten vises */
 }
 
+
+/* Animation keyframes for scrolling */
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.nyhedsbrev {
+  display: flex; /* Brug flexbox til centrering */
+  justify-content: center; /* Centrer indholdet horisontalt */
+  align-items: center; /* Centrer indholdet vertikalt */
+  padding: 20px; /* Tilføj lidt indvendig afstand */
+  margin: 40px auto; /* Centrer boksen og tilføj afstand over og under */
+  max-width: 800px; /* Angiv en maksimal bredde for boksen */
+}
+
+}
+
+/* Tablet version */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero {
+    position: relative;
+    height: 200px; /* Adjusted height for tablet */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+  }
+  .heroVideo {
+    position: absolute;
+    top: 23%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    background-color: black;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  .heroImage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 180px; /* Adjusted width for tablet */
+    z-index: 2;
+  }
+  .heroText {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 22px; /* Adjusted font size for tablet */
+    text-wrap: nowrap;
+    color: white;
+    z-index: 2;
+    text-align: center;
+  }
+  .heroBtn {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
   .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     position: relative;
+    margin-bottom: 50px;
+  }
+  .item-0, .item-1, .item-2, .item-3 {
+    height: 150px; /* Adjusted height for tablet */
+    font-size: 25px; /* Adjusted font size for tablet */
+    text-align: center;
+    align-content: center;
+    margin: 10px;
+  }
+  .item-0 { grid-column: 1; grid-row: 1; }
+  .item-1 { grid-column: 2 / span 2; grid-row: 1; }
+  .item-2 { grid-column: 1 / span 2; grid-row: 2; }
+  .item-3 { grid-column: 3; grid-row: 2; }
+  .glas_boks {
+    padding: 25px; /* Adjusted padding for tablet */
+    text-align: center;
+  }
+  .TakForIAar, .TakForIAar h2 {
+    font-size: 40px; /* Adjusted font size for tablet */
+    margin-top: 45px; /* Adjusted margin for tablet */
+    text-align: center;
+  }
+  .artistLoop {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    margin: 30px;
+    font-family: "glodok", sans-serif;
+    font-size: 30px; /* Adjusted font size for tablet */
+    margin: 0;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .loopNavne {
+    display: inline-block;
+    animation: scrolling 20s linear infinite;
+    background: linear-gradient(to right, #CF6AFF 0%, #FF007A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
-  .mobile-only {
-    display: block;
+  /* Animation keyframes for scrolling */
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
   }
-  .desktop-only {
-    display: none;
+  100% {
+    transform: translateX(-50%);
   }
+}
+  .nyhedsbrev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px; /* Adjusted padding for tablet */
+    margin: 60px auto; /* Adjusted margin for tablet */
+    width: 100%; /* Stretch to full width */
+  }
+}
+
+
+   /*******  Desktop ******/
+@media (min-width: 769px){
+  .hero {
+    position: relative;
+    height: 300px; /* Larger height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 230px;
+    z-index: -1;
+  }
+  .heroVideo {
+    position: absolute;
+    top: 23%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    background-color: black;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  .heroImage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 250px; /* Larger width */
+    z-index: 2;
+  }
+  .heroText {
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px; /* Larger font size */
+    text-wrap: nowrap;
+    color: white;
+    z-index: 2;
+    text-align: center;
+  }
+  .heroBtn{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    position: relative;
+    margin-bottom: 75px;
+  }
+  .item-0, .item-1, .item-2, .item-3 {
+    height: 200px; /* Larger height */
+    font-size: 34px; /* Larger font size */
+    text-align: center;
+    align-content: center;
+    margin: 10px;
+  }
+  .item-0 { grid-column: 1; grid-row: 1; }
+  .item-1 { grid-column: 2 / span 2; grid-row: 1; }
+  .item-2 { grid-column: 1 / span 2; grid-row: 2; }
+  .item-3 { grid-column: 3; grid-row: 2; }
+  .glas_boks {
+    padding: 30px; /* Larger padding */
+    text-align: center;
+  }
+  .TakForIAar, .TakForIAar h2 {
+    font-size: 60px; /* Larger font size */
+    margin-top: 60px; /* Larger margin */
+    text-align: center;
+  }
+  .artistLoop {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    margin: 30px;
+    font-family: "glodok", sans-serif;
+    font-size: 40px; /* Larger font size */
+    margin: 0;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .loopNavne {
+    display: inline-block;
+    animation: scrolling 20s linear infinite;
+    background: linear-gradient(to right, #CF6AFF 0%, #FF007A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  /* Animation keyframes for scrolling */
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.nyhedsbrev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px; /* Larger padding */
+  margin: 80px auto; /* Larger margin */
+  width: 100%; /* Stretch to full width */
+}
+
+}
+
+    </style>
+
   
-    .item-0 {
-      grid-column: 1;
-      grid-row: 1;
-      height: 150px;
-      text-align: center;
-      align-content: center;
-      margin: 10px;
-    }
-    
-    .item-1 {
-      grid-column: 2 / span 2;
-      grid-row: 1;
-      text-align: center;
-      align-content: center;
-      margin: 10px;
-    }
-    
-    .item-2 {
-      grid-column: 1 / span 2;
-      grid-row: 2;
-      text-align: center;
-      align-content: center;
-      margin: 10px;
-    }
-    
-    .item-3 {
-      grid-column: 3;
-      grid-row: 2;
-      text-align: center;
-      align-content: center;
-      margin: 10px;
-    }
-    @media (min-width: 768px) {
-    .grid {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-      gap: 8px;
-    }
-    .mobile-only {
-      display: none;
-    }
-    .desktop-only {
-      display: block;
-    }
-    
-    .item-0 {
-      grid-column: 1;
-      grid-row: 1;
-    }
-    
-    .item-1 {
-      grid-column: 2 / span 2;
-      grid-row: 1;
-    }
-    
-    .item-2 {
-      grid-column: 1 / span 2;
-      grid-row: 2;
-    }
-    
-    .item-3 {
-      grid-column: 3;
-      grid-row: 2;
-    }
-    
-  }
-  </style>

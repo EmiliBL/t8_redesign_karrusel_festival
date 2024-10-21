@@ -1,9 +1,11 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
+import MainLayout from "../layouts/MainLayout.astro"
 
+import VolunteerForm from "../components/VolunteerForm.astro"
 ---
 
 <MainLayout>
+
   <div class="hero_img">
     <img src="website_fotos/volunteer1.webp" alt="Volunteer">
 </div>
@@ -23,41 +25,7 @@ import MainLayout from "../layouts/MainLayout.astro";
     </ul>
 </div>
 <form>
-    <h2>Apply here</h2>
-
-    <div class="form_indhold">
-        <div class="form-group">
-            <label for="fname">Your name</label>
-            <input type="text" id="fname" name="fname" placeholder="Write name here">
-        </div>
-
-        <div class="form-group">
-            <label for="email">Your email</label>
-            <input type="email" id="email" name="email" placeholder="Write email here">
-        </div>
-
-        <div class="form-group">
-            <label for="number">Your phone number</label>
-            <input type="tel" id="number" name="number" placeholder="Number to contact you on">
-        </div>
-
-        <div class="form-group">
-            <label for="age">Your age</label>
-            <input type="number" id="age" name="age" placeholder="+18">
-        </div>
-
-        <div class="form-group">
-            <label for="message">Tell us about yourself</label>
-            <textarea id="message" name="message" placeholder="Message"></textarea>
-        </div>
-    </div>
-
-    <div class="checkbox-group">
-        <input type="checkbox" id="checkbox" name="terms" value="terms">
-        <label for="checkbox"> Terms & Conditions</label>
-    </div>
-
-    <input type="submit" value="Apply">
+<VolunteerForm/>
 </form>
 </MainLayout>
 
@@ -74,28 +42,28 @@ body {
 }
 
 .hero_img {
-  background: center / cover no-repeat; /* Billedet dækker hele containeren */
-  height: 583px;
+  background: center / cover no-repeat;
+  border: 0;
+  width: 100%; 
   opacity: 80%;
-}
-
-.p_default,
-.p_semibold_20px {
-  margin: 10px 0; /* Tilføjer lidt afstand mellem paragrafer */
+  position: relative; 
 }
 
 .text_boks {
+  position: absolute; 
+  top: 20%; 
+  left: 5%;
+  right: 5%; 
   color: var(--secondary-color);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Corrected from first baseline to flex-start */
-  justify-content: flex-start;
   text-align: left;
-  position: relative; /* For at kunne placere tekst over billedet */
-  opacity: 100%;
-  margin-top: -28%;
-  margin-left: 173px; /* Consider adjusting this for mobile */
+  margin: 0; 
 }
+
+
+.p_semibold_20px {
+  margin: 10px 0; 
+}
+
 
 h1 {
   font-family: "glodok", sans-serif;
@@ -110,18 +78,19 @@ li {
   font-family: "Prompt", sans-serif;
   font-size: 16px;
   color: var(--secondary-color);
-  line-height: 1.78; /* Use unitless value for better scaling */
+  line-height: 1.78; 
 }
 
 .p_default {
-  margin-right: 573px; /* Consider revising or removing for mobile */
+  margin-right: 573px; 
 }
 
-/* ************Form */
+/* ************Form **********************/
 body {
   font-family: "Prompt", sans-serif;
   background-color: var(--secondary-color);
-  padding: 20px;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
 form {
@@ -129,49 +98,61 @@ form {
   background: rgba(255, 255, 255, 0.19);
   backdrop-filter: blur(7.5px);
   max-width: 962px;
-  margin: 3% auto 0 250px; /* Adjusted for centering */
+  margin-top: 5%;
+  margin-left: 18%;
+  margin-bottom: 5%;
   padding: 2%;
 }
 
 .form_indhold {
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping for two columns */
+  flex-wrap: wrap; 
 }
 
 .form-group {
-  flex: 1 1 45%; /* Allow columns to take up to 45% of the width */
-  min-width: 250px; /* Minimum width for responsiveness */
-  padding: 10px; /* Add some padding between elements */
+  flex: 1 1 45%; 
+  min-width: 250px; 
+  padding: 10px; 
+  font-family: "Prompt", sans-serif;
 }
 
 label {
-  display: block; /* Ensures label takes a new line */
-  margin-bottom: 5px; /* Space below the label */
+  display: block; 
+  margin-bottom: 5px; 
 }
 
 input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="number"],
+input[type="message"],
 textarea {
   width: 100%;
   padding: 10px;
-  margin: 8px 0; /* Adjust margin for better spacing */
-  border-radius: 20px; /* Match the existing rounded style */
+  margin: 8px 0; 
+  border-radius: 20px; 
+  font-family: "Prompt", sans-serif;
 }
 
+label {
+  display: block; 
+  margin-bottom: 5px; 
+}
+
+
 textarea {
-  height: 100px; /* Adjusted height for better appearance */
+  height: 100px; 
+  font-family: "Prompt", sans-serif;
 }
 
 .checkbox-group {
-  display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Vertically center align the checkbox and label */
-  margin: 10px 0; /* Space above and below the checkbox group */
+  display: flex; 
+  align-items: center; 
+  margin: 10px 0;
 }
 
 input[type="checkbox"] {
-  margin-right: 5px; /* Space between checkbox and label */
+  margin-right: 5px; 
 }
 
 input[type="submit"] {
@@ -202,39 +183,59 @@ input[type="submit"]:hover {
 /* Responsive Styles */
 @media (max-width: 768px) {
   .form_indhold {
-    flex-direction: column; /* Stack form groups vertically */
+    flex-direction: column; 
   }
 
-  .form-group {
-    flex: 1 1 100%; /* Take full width on mobile */
-    min-width: 100%; /* Ensure full width */
-    padding: 0; /* Optional: Adjust padding as needed */
-  }
-
-  .text_boks {
-    margin-left: 0; /* Center the text box on mobile */
-  }
-
-  form {
-    margin-left: 0; /* Center the form on mobile */
-    padding: 10px; /* Adjust padding for mobile */
-  }
-
-  .text_boks {
-    position: absolute; /* Position text on top of the image */
-    top: 20%; /* Adjust this value as needed */
-    left: 5%; /* Adjust this value as needed */
-    right: 5%; /* Add padding to the right */
-    text-align: left; /* Center text for mobile */
-    margin: 0; /* Reset margin for better alignment */
+  .hero_img {
+    background: center / cover no-repeat;
+    width: 100%;
+    margin: 0;
+    height: ;
   }
 
   h1 {
-    font-size: 40px; /* Adjust heading size for mobile */
+    font-size: 32px; 
+  }
+
+  .p_default,
+  li {
+    font-size: 14px;
+  }
+
+  li{
+    margin-left: 16px;
+  }
+  .form-group {
+    flex: 1 1 100%; 
+    min-width: 100%; 
+    padding: 0; 
+  }
+
+  .text_boks {
+    margin-left: 0; 
+  }
+
+  form {
+    margin-left: 0; 
+    padding: 10px; 
+    margin-top: 80%;
+    margin-left: 16px;
+  }
+
+  .text_boks {
+    position: absolute; 
+    top: 20%; 
+    left: 5%; 
+    right: 5%; 
+    text-align: left; 
+    margin: 0; 
+
+  h1 {
+    font-size: 40px; 
   }
 
   h2 {
-    font-size: 30px; /* Adjust subheading size for mobile */
+    font-size: 30px; 
   }
 
   .p_default {
@@ -247,14 +248,9 @@ input[type="submit"]:hover {
     font-family: "Prompt", sans-serif;
     font-size: 14px;
     color: var(--secondary-color);
-    line-height: 1.78; /* Use unitless value for better scaling */
+    line-height: 1.78; 
   }
 
-  .hero_img {
-    background: center / cover; /* Billedet dækker hele containeren */
-    height: 540px;
-    opacity: 80%;
-  }
 }
 
 </style>

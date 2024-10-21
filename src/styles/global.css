@@ -475,43 +475,4 @@ body {
     font-family: "glodok", sans-serif;
     font-size: 70px;
   }
-
-  .artistLoop {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    position: relative;
-    overflow: hidden;
-    --offset: 20vw;
-    --item-font-size: 10vw;
-    --move-initial: calc(-25% + var(--offset));
-    --move-final: calc(-50% + var(--offset));
-  }
-
-  .loopNavne {
-    width: fit-content;
-    display: flex;
-    position: relative;
-    transform: translate3d(var(--move-initial), 0, 0);
-    animation: artistLoop 9s linear infinite;
-  }
-
-  .artistLoop span {
-    white-space: nowrap;
-    font-size: 9.9vw;
-    padding: 0 2vw;
-    font-size: 50px;
-  }
-
-  @keyframes artistLoop {
-    0% {
-      transform: translate3d(var(--move-initial), 0, 0);
-    }
-
-    100% {
-      transform: translate3d(var(--move-final), 0, 0);
-    }
-  }
 }
