@@ -19,7 +19,7 @@
 
 <style>
     .glas_boks {
-width: 370px;
+width: 800px;
 height: 340px;
 padding: 15px;
 border-radius: 35px;
@@ -38,6 +38,8 @@ input{
     padding: 10px;
     border-radius: 10px;
     margin: 5px;
+    border-style: none;
+    width: 350px;
 }
 input[type="submit"] {
   display: flex;
@@ -54,5 +56,18 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: #73fa46;
+}
+
+/**** Mobil ****/
+@media (min-width: 769px) and (max-width: 1024px) {
+    .glas_boks {
+width: 370px;
+height: 340px;
+padding: 15px;
+border-radius: 35px;
+background: rgba(255, 255, 255, 0.19);
+backdrop-filter: blur(7.5px);
+text-align: left;
+}
 }
 </style>
